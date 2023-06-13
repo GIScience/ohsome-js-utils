@@ -3,33 +3,32 @@
   "version": "0.6.1",
   "description": "This library contains JavaScript functions to help clients to use the Ohsome-Api for analyzing historical OpenStreetMap data.",
   "license": "Apache-2.0",
-  "author": {
-    "name": "Michael Auer",
-    "email": "michael.auer@heigit.org"
-  },
+  "author": "Michael Auer <michael.auer@heigit.org>",
   "contributors": [
-    {
-      "name": "Rafael Troilo"
-    },
-    {
-      "name": "Fabian Kowatsch"
-    },
-    {
-      "name": "Sascha Fendrich"
-    },
-    {
-      "name": "Martin Raifer"
-    },
-    {
-      "name": "Lukas Loos"
-    },
-    {
-      "name": "Mohammed Rizwan Khan"
-    }
+    "Rafael Troilo",
+    "Fabian Kowatsch",
+    "Sascha Fendrich",
+    "Martin Raifer",
+    "Lukas Loos",
+    "Mohammed Rizwan Khan"
   ],
   "repository": {
     "type": "git",
     "url": "https://github.com/GIScience/ohsome-js-utils.git"
+  },
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    "./package.json": {
+      "default": "./package.json"
+    },
+    ".": {
+      "types": "./dist/index.d.ts",
+      "es2020": "./dist/ohsome-js-utils.mjs",
+      "node": "./dist/ohsome-js-utils.umd.min.js",
+      "default": "./dist/ohsome-js-utils.umd.min.js"
+    }
   },
   "scripts": {
     "build": "rollup -c rollup.config.mjs",
