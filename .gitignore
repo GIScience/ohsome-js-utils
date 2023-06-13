@@ -1,0 +1,9 @@
+.idea
+
+node_modules
+
+# local test directory
+test
+
+# build output folder
+/dist/
