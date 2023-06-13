@@ -2,7 +2,7 @@
 
 Why is it experimental?
 It not yet fully supports all response types that the [ohsome API](https://api.ohsome.org/v1/swagger-ui.html) can return. 
-So currently it mainly supports the functionality needen in the [ohsome Dashboard](https://dashboard.ohsome.org) app.
+So currently it mainly supports the functionality needed in the [ohsome Dashboard](https://dashboard.ohsome.org) app.
 
 # Info
 This library contains JavaScript functions to help clients to use the Ohsome-Api for analyzing historical OpenStreetMap data. 
