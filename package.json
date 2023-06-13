@@ -1,6 +1,6 @@
 {
   "name": "@giscience/ohsome-js-utils",
-  "version": "0.6.2",
+  "version": "0.6.3",
   "description": "This library contains JavaScript functions to help clients to use the Ohsome-Api for analyzing historical OpenStreetMap data.",
   "license": "Apache-2.0",
   "author": "Michael Auer <michael.auer@heigit.org>",
