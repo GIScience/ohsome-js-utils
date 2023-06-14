@@ -19,6 +19,9 @@
   "files": [
     "dist"
   ],
+  "main": "./dist/ohsome-js-utils.umd.min.js",
+  "module": "./dist/ohsome-js-utils.mjs",
+  "types": "./dist/index.d.ts",
   "exports": {
     "./package.json": {
       "default": "./package.json"
