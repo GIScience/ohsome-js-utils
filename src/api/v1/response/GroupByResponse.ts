@@ -1,6 +1,5 @@
 import {Response} from './Response';
-import {GroupByResponseJSON} from '../format';
-import {ResponseJSON} from '../format';
+import {GroupByResponseJSON, ResponseJSON} from '../format';
 import {GroupByResultItemJSON} from '../format/GroupByResultItemJSON';
 import {GroupByBoundaryRatioResponseJSON} from '../format/GroupByBoundaryRatioResponseJSON';
 
@@ -42,6 +41,7 @@ class GroupByResponse extends Response implements GroupByResponseJSON {
   toCSV(): string {
     let csv = '';
     const SEPARATOR = ",";
+    const shouldEscape = new RegExp(`${SEPARATOR}|"|\n|\r`);
     let resultItemProps: string[];
 
     //get headings from first existing groupResultItem
@@ -58,7 +58,9 @@ class GroupByResponse extends Response implements GroupByResponseJSON {
     for (const groupByResultItem of this.groupByResult) {
       for (const resultItem of groupByResultItem.result) {
         // quote if comma in string and escape quote if quoted
-        const groupByObjectValue = (groupByResultItem.groupByObject.includes(SEPARATOR))? `"${groupByResultItem.groupByObject.replace('"','""')}"` : groupByResultItem.groupByObject;
+        const groupByObjectValue = (shouldEscape.test(groupByResultItem.groupByObject))
+          ? `"${groupByResultItem.groupByObject.replace(/"/g, '""')}"`
+          : groupByResultItem.groupByObject;
         csv += [groupByObjectValue, ...resultItemProps.map(prop => resultItem[prop])].join(SEPARATOR) + '\n';
       }
     }
